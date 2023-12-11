@@ -1,0 +1,15 @@
+---
+Local:
+  hosts:
+    local1:
+Servers:
+  hosts:
+    server1:
+Development:
+  hosts:
+    dev1:
+Home:
+  children:
+    Local:
+    Servers:
+    Development: 
