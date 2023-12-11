@@ -1,9 +1,35 @@
-- name: First test playbook
+---
+- name: Bootstrap server for future ansible runs
   hosts: all
-  tasks:
-  - name: Ping my hosts
-    ansible.builtin.ping:
 
-  - name: Print message
-    ansible.builtin.debug:
-     msg: testing connections
+  vars:
+    user_name: developer
+    user_pass: test@1
+
+  tasks:
+  - name: Update apt cache
+    apt: update_cache=yes
+
+  - name: Safe aptitude upgrade
+    apt: upgrade=safe
+    async: 600
+    poll: 5
+
+  - name: Add user veeson
+    user: >
+      name={{ user_name }}
+      password{{ user_pass }}
+      shell=/bin/bash
+      append=yes
+      generate_ssh_key=yes
+      ssh_key_bits=2048
+      state=present
+
+  - name: Add public key to user
+    authorized_key:
+      user: "{{ user_name }}"
+      key: "{{ lookup('file', 'certificates/ansible.pub') }}"
+      state: present
+  
+  - name: Reboot the server
+    command: /sbin/reboot

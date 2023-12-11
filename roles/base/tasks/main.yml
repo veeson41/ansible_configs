@@ -1,0 +1,11 @@
+# base play for ssh, user creation and setup for ansible
+
+- hosts: all
+  become: true
+  tasks:
+    - name: create veeson user
+      user:
+        name: developer
+        create_home: true
+        shell: /bin/bash
+        groups: admin
