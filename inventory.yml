@@ -1,10 +1,7 @@
 ---
-Localhost:
-  hosts:
-    localhost:
 Local:
   hosts:
-    local1:
+    localhost:
 Servers:
   hosts:
     server1:
