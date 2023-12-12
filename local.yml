@@ -1,9 +1,10 @@
 ---
-- hosts: localhost
+- name: Initial bootstrappin
+  hosts: localhost
   connection: local
   become: true
 
-  var:
+  vars:
    - vars/initial.yml
    - vars/secret
 
