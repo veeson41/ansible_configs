@@ -23,8 +23,8 @@
 
   - name: Create user with sudo privileges
     user: 
-      name: {{ user_name }} 
-      password: {{ password | password_hash('sha512', password_salt) }}  
+      name: "{{ user_name }}"
+      password: "{{ password | password_hash('sha512', password_salt) }}"
       shell: /bin/bash 
       groups: sudo 
       append: yes 
