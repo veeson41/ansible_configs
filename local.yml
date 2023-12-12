@@ -3,10 +3,9 @@
   hosts: localhost
   connection: local
   become: true
-
-  vars:
-   - vars/initial.yml
-   - vars/secret
+  vars_files:
+    - vars/initial.yml
+    - vars/secret
 
   tasks:
   - name: Update apt cache
