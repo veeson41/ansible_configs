@@ -18,8 +18,8 @@
 
   - name: Make sure we have a 'sudo' group
     ansible.builtin.group:
-    name: sudo
-    state: present
+      name: sudo
+      state: present
 
   - name: Create user with sudo privileges
     user: 
