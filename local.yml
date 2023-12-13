@@ -56,12 +56,14 @@
        - python3-setuptools
        - tmux
        - neovim
-       - go
+       - golang
        - ansible
        - fzf
        - ripgrep
        - zip
        - docker-ce
+       - docker-ce-cli
+       - containerd.io
        - docker-compose
       state: latest
       update_cache: true
