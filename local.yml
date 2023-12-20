@@ -7,7 +7,7 @@
     - vars/initial.yml
     - vars/secret
 
-  tasks:
+  pre_tasks:
   - name: Update apt cache
     apt: update_cache=yes
 
@@ -34,6 +34,7 @@
       update_password: on_create
       state: present
 
+  tasks:
   - name: Add Docker GPG apt Key
     apt_key:
       url: https://download.docker.com/linux/ubuntu/gpg
