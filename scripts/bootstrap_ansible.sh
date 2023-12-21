@@ -4,7 +4,7 @@
 os_specific_package(){
 os=$(cat /etc/os-release | grep -w NAME | sed 's/NAME="//g' | sed 's/"//g' | cut -d " " -f1)
 [ "$os" = "Ubuntu" ]  && sudo apt update && sudo apt upgrade -y && sudo apt install ansible -y
-[ "$os" = "Arch" ]  && sudo pacman -Syu ansible --no-confirm
+[ "$os" = "Arch" ]  && sudo pacman -Syu ansible --noconfirm
 [ "$os" = "Debian" ]  && sudo apt update && sudo apt upgrade -y && sudo apt install ansible -y
 }
 
