@@ -33,8 +33,7 @@
   - name: Create user with sudo privileges
     user: 
       name: "{{ username }}"
-        #password: "{{ password | password_hash('sha512', password_salt) }}"
-      password: "{{ password }}"
+      password: "{{ password | password_hash('sha512', password_salt) }}"
       shell: /bin/bash 
       groups: sudo 
       append: yes 
@@ -43,6 +42,14 @@
       ssh_key_bits: 2048 
       update_password: on_create
       state: present
+
+  - name: Add ssh keys
+    authorized_key:
+      user: veeson
+      state: present
+      key: "{{ item }}"
+    with_file:
+      - var/public_keys/development
 
         #  tasks:
         #  - name: Add Docker GPG apt Key
