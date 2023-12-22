@@ -8,7 +8,7 @@
     - vars/secret
 
   pre_tasks:
-  - name: Update repository index and packages
+  - name: Update ubuntu repository index and packages
     tags: always
     apt: 
       update_cache: yes
@@ -17,13 +17,13 @@
     changed_when: false
     when: ansible_distribution == "Ubuntu"
 
-  - name: Update repository index and packages
+  - name: Update arch repository index and packages
     tags: always
     community.general.pacman: 
       update_cache: yes
       upgrade: yes
     changed_when: false
-    when: ansible_distribution == "Arch"
+    when: ansible_distribution == "Archlinux"
 
   - name: Make sure we have a 'sudo' group
     ansible.builtin.group:

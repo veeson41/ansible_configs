@@ -2,7 +2,7 @@
 
 arch(){
 export LC_ALL=C.UTF-8
-sudo pacman -Syu ansible --noconfirm
+sudo pacman -Syu ansible openssh --noconfirm
 }
 
 debian(){
