@@ -8,13 +8,25 @@
     - vars/secret
 
   pre_tasks:
-  - name: Update apt cache
-    apt: update_cache=yes
-
-  - name: Update all installed packages
-    ansible.builtin.apt:
+  - name: Update repository index and packages
+    tags: always
+    apt: 
+      update_cache: yes
       name: "*"
       state: latest
+    changed_when: false
+    when: ansible_distribution == "Ubuntu"
+
+  - name: Update repository index
+    apt: update_cache=yes
+
+  - name: Update repository index and packages
+    tags: always
+    community.general.pacman: 
+      update_cache: yes
+      upgrade: yes
+    changed_when: false
+    when: ansible_distribution == "Arch"
 
   - name: Make sure we have a 'sudo' group
     ansible.builtin.group:
@@ -34,39 +46,39 @@
       update_password: on_create
       state: present
 
-  tasks:
-  - name: Add Docker GPG apt Key
-    apt_key:
-      url: https://download.docker.com/linux/ubuntu/gpg
-      state: present
-
-  - name: Add Docker Repository
-    apt_repository:
-      repo: deb https://download.docker.com/linux/ubuntu jammy stable
-      state: present
-
-  - name: install packages
-    apt:
-      pkg:
-       - apt-transport-https
-       - ca-certificates
-       - curl
-       - software-properties-common
-       - python3-pip
-       - virtualenv
-       - python3-setuptools
-       - tmux
-       - neovim
-       - golang
-       - ansible
-       - fzf
-       - ripgrep
-       - zip
-       - docker-ce
-       - docker-ce-cli
-       - containerd.io
-       - docker-compose
-      state: latest
-      update_cache: true
-
-
+        #  tasks:
+        #  - name: Add Docker GPG apt Key
+        #    apt_key:
+        #      url: https://download.docker.com/linux/ubuntu/gpg
+        #      state: present
+        #
+        #  - name: Add Docker Repository
+        #    apt_repository:
+        #      repo: deb https://download.docker.com/linux/ubuntu jammy stable
+        #      state: present
+        #
+        #  - name: install packages
+        #    apt:
+        #      pkg:
+        #       - apt-transport-https
+        #       - ca-certificates
+        #       - curl
+        #       - software-properties-common
+        #       - python3-pip
+        #       - virtualenv
+        #       - python3-setuptools
+        #       - tmux
+        #       - neovim
+        #       - golang
+        #       - ansible
+        #       - fzf
+        #       - ripgrep
+        #       - zip
+        #       - docker-ce
+        #       - docker-ce-cli
+        #       - containerd.io
+        #       - docker-compose
+        #      state: latest
+        #      update_cache: true
+        #
+        #
