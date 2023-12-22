@@ -49,7 +49,7 @@
       state: present
       key: "{{ item }}"
     with_file:
-      - var/public_keys/development
+      - vars/public_keys/development
 
         #  tasks:
         #  - name: Add Docker GPG apt Key
