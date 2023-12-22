@@ -17,9 +17,6 @@
     changed_when: false
     when: ansible_distribution == "Ubuntu"
 
-  - name: Update repository index
-    apt: update_cache=yes
-
   - name: Update repository index and packages
     tags: always
     community.general.pacman: 
