@@ -3,6 +3,8 @@
 arch(){
 export LC_ALL=C.UTF-8
 sudo pacman -Syu ansible openssh --noconfirm
+sudo systemctl enable sshd
+sudo systemctl start sshd
 }
 
 debian(){
