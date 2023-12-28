@@ -1,6 +1,5 @@
 # debian base packages 
 
-  tasks:
   - name: Add Docker GPG apt Key
     apt_key:
       url: https://download.docker.com/linux/ubuntu/gpg
