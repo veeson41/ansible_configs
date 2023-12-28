@@ -11,4 +11,10 @@
 
   - name: Install base apt packages
     import_tasks: debian.yml
-    tags: apt-base
+    tags: apt-base-pkg
+    when: ansible_distribution == "Ubuntu" or ansible_distribution == "Debian"
+
+  - name: Install base arch packages
+    import_tasks: arch.yml
+    tags: arch-base-pkg
+    when: ansible_distribution == "Archlinux"

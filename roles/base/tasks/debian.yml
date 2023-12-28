@@ -10,7 +10,7 @@
       repo: deb https://download.docker.com/linux/ubuntu jammy stable
       state: present
 
-  - name: install packages
+  - name: install apt packages
     apt:
       pkg:
        - apt-transport-https

@@ -1,0 +1,26 @@
+# arch base packages, to be tested
+
+  - name: update arch
+    community.general.pacman: 
+      update_cache: yes
+      upgrade: yes
+    changed_when: false
+
+
+  - name: install arch packages
+    community.general.pacman: 
+      name:
+       - curl
+       - python3-pip
+       - virtualenv
+       - python3-setuptools
+       - tmux
+       - neovim
+       - golang
+       - fzf
+       - ripgrep
+       - docker-compose
+       - docker
+       - lf 
+      state: latest
+      update_cache: true
