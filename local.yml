@@ -6,8 +6,8 @@
     #  roles:
     #    - base
   vars_files:
-    - vars/initial.yml
-    - vars/secret
+    - /vars/initial.yml
+    - /vars/secret
 
   pre_tasks:
   - name: Update ubuntu repository index and packages
