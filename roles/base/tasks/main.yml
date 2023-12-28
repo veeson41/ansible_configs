@@ -23,6 +23,11 @@
       update_password: on_create
       state: present
 
+  - name: Make sure we have a 'sudo' group
+    ansible.builtin.group:
+      name: sudo
+      state: present
+
   - name: Install base apt packages
     import_tasks: debian.yml
     tags: apt-base-pkg
