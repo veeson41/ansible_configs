@@ -26,7 +26,5 @@
     changed_when: false
     when: ansible_distribution == "Archlinux"
 
-      #    with_file:
-  
   roles:
     - base

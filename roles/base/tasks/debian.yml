@@ -31,5 +31,10 @@
        - docker-ce-cli
        - containerd.io
        - docker-compose
+       - zsh
       state: latest
       update_cache: true
+
+  - name: Installing and adding lf
+    shell: env GO_ENABLED=0 go install -ldflags="-s -w" github.com/gokcehan/lf@latest &&
+      sudo cp go/bin/lf /usr/bin/ && sudo rm -rf go 
