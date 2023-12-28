@@ -3,6 +3,8 @@
   hosts: localhost
   connection: local
   become: true
+    #  roles:
+    #    - base
   vars_files:
     - vars/initial.yml
     - vars/secret
@@ -51,6 +53,5 @@
     with_file:
       - vars/public_keys/development
   
-  - name: Installing packages
-    roles:
-     - base
+  roles:
+    - base
