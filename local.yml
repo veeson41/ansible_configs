@@ -51,6 +51,6 @@
     with_file:
       - vars/public_keys/development
   
- - name: Installing packages
-   roles:
+  - name: Installing packages
+    roles:
      - base
