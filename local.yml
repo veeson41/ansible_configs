@@ -3,6 +3,10 @@
   hosts: localhost
   connection: local
   become: true
+  vars_files:
+    - vars/initial.yml
+    - vars/secret
+    - vars/public_keys/development
 
   pre_tasks:
   - name: Update ubuntu repository index and packages
@@ -22,15 +26,7 @@
     changed_when: false
     when: ansible_distribution == "Archlinux"
 
-
-
-  - name: Add ssh keys
-    authorized_key:
-      user: veeson
-      state: present
-      key: "{{ item }}"
-    with_file:
-      - vars/public_keys/development
+      #    with_file:
   
   roles:
     - base

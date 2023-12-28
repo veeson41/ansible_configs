@@ -28,6 +28,12 @@
       name: sudo
       state: present
 
+  - name: Add ssh keys
+    authorized_key:
+      user: veeson
+      state: present
+      key: "{{ pub_ssh }}"
+
   - name: Install base apt packages
     import_tasks: debian.yml
     tags: apt-base-pkg
