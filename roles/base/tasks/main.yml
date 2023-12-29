@@ -1,15 +1,5 @@
 # base play for ssh, user creation and setup for ansible
 
-#  become: true
-#  tasks:
-#    - name: create veeson user
-#      user:
-#        name: developer
-#        create_home: true
-#        shell: /bin/bash
-#        groups: admin
-#        
-
   - name: Create user with sudo privileges
     user: 
       name: "{{ username }}"
@@ -37,6 +27,11 @@
   - name: Install base apt packages
     import_tasks: debian.yml
     tags: apt-base-pkg
+    when: ansible_distribution == "Ubuntu" or ansible_distribution == "Debian"
+        
+  - name: Install base apt packages
+    import_tasks: repo_utils.yml
+    tags: apt-repo-pkg
     when: ansible_distribution == "Ubuntu" or ansible_distribution == "Debian"
 
   - name: Install base arch packages

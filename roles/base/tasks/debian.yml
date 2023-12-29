@@ -1,6 +1,5 @@
 # debian base packages 
 
-
   - name: install apt packages
     apt:
       pkg:
@@ -18,24 +17,8 @@
        - fzf
        - ripgrep
        - zip
-       - docker-ce
-       - docker-ce-cli
-       - containerd.io
-       - docker-compose
        - zsh
        - gnupg  
       state: latest
       update_cache: true
 
-  - name: Add Docker GPG apt Key
-    apt_key:
-      url: https://download.docker.com/linux/ubuntu/gpg
-      state: present
-
-  - name: Add Docker Repository
-    apt_repository:
-      repo: deb https://download.docker.com/linux/ubuntu jammy stable
-      state: present
-
-  - name: Installing and adding lf
-    script: ../../../scripts/lf_install.sh
