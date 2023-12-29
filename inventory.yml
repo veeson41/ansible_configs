@@ -3,9 +3,6 @@ all:
   vars_files:
     - vars/initial.yml
     - vars/secret
-Local:
-  hosts:
-    localhost:
 Servers:
   hosts:
     server1:
@@ -14,6 +11,5 @@ Development:
     dev1:
 Home:
   children:
-    Local:
     Servers:
     Development: 
