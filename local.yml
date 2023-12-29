@@ -1,7 +1,7 @@
 ---
 - name: Initial bootstrappin
   hosts: localhost
-  connection: local
+    #connection: local
   become: true
   vars_files:
     - vars/initial.yml
