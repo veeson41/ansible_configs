@@ -33,10 +33,9 @@
   - name: local-ct Sync lf
     tags: ct-local-config
     ansible.builtin.file:
-      src: /mnt/sync/Sync_Ref/Config_files/Dotfiles/zsh/lf
+      src: /mnt/sync/Sync_Ref/Config_files/Dotfiles/lf
       dest: /home/veeson/.config/lf
       state: link
-
 
   - name: local-ct Sync tmux
     tags: ct-local-config
