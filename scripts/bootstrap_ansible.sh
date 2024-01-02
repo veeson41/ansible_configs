@@ -21,7 +21,7 @@ os_package_update(){
 server_config(){
 wget https://raw.githubusercontent.com/veeson41/ansible_configs/master/vars/raptor_secret && 
 ansible-vault decrypt raptor_secret && 
-ansible-pull local-server.yml --check --vault-pass-file raptor_secret -U  https://github.com/veeson41/ansible_configs 
+ansible-pull --check --vault-pass-file raptor_secret -U  https://github.com/veeson41/ansible_configs local-server.yml
 }
 
 machine_type(){
