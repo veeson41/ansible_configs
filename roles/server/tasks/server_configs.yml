@@ -17,6 +17,18 @@
       group: veeson
       state: link
 
+  - name: Create a zsh history
+    ansible.builtin.file:
+      path: /home/veeson/.cache/zsh
+      state: directory
+      mode: '0755'
+
+  - name: create zsh_history file
+    ansible.builtin.file:
+      path: /home/veeson/.cache/zsh/.zsh_history
+      state: file
+      state: present
+
   - name: local-ct Sync lf
     tags: ct-local-config
     ansible.builtin.file:
@@ -25,6 +37,7 @@
       owner: veeson
       group: veeson
       state: link
+
 
   - name: local-ct Sync tmux
     tags: ct-local-config
