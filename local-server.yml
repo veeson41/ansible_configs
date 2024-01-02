@@ -1,0 +1,34 @@
+---
+- name: Initial bootstrappin
+  hosts: localhost
+  connection: local
+  become: true
+  vars_files:
+    - vars/initial.yml
+    - vars/secret
+    - vars/public_keys/development
+
+  pre_tasks:
+  - name: starting
+    debug:
+      msg: Starting server configuration
+
+  - name: Update ubuntu repository index and packages
+    tags: always
+    apt: 
+      update_cache: yes
+      name: "*"
+      state: latest
+    changed_when: false
+    when: ansible_distribution == "Ubuntu"
+
+  - name: Update arch repository index and packages
+    tags: always
+    community.general.pacman: 
+      update_cache: yes
+      upgrade: yes
+    changed_when: false
+    when: ansible_distribution == "Archlinux"
+
+  roles:
+    - base
