@@ -1,0 +1,13 @@
+# base play for ssh, user creation and setup for ansible
+
+
+  - name: Make sure we have '/home/veeson' 
+    ansible.builtin.user:
+      home: /home/veeson
+      state: present
+
+  - name: Sync ct local configs
+    tags: ct-local-server
+    import_tasks: server_configs.yml
+    when: ansible_distribution == "Ubuntu" or ansible_distribution == "Debian"
+        

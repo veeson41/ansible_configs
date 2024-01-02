@@ -18,26 +18,26 @@ os_package_update(){
 	[ "$os" = "Debian" ]  && debian
 }
 
-server_config(){
+playbook(){
 wget https://raw.githubusercontent.com/veeson41/ansible_configs/master/vars/raptor_secret && 
 ansible-vault decrypt raptor_secret && 
-ansible-pull local-server.yml --check --vault-pass-file raptor_secret -U  https://github.com/veeson41/ansible_configs
+ansible-pull $1.yml --check --vault-pass-file raptor_secret -U  https://github.com/veeson41/ansible_configs
 }
 
-machine_type(){
-  case $1 in
-    server)
-      echo "Bootstrapping Server machine"
-      server_config ;;
-    workstation)
-      echo "Bootstrapping workstation";;
-    *) 
-      echo "Not a configuration type";;
-   esac
-}
+#machine_type(){
+#  case $1 in
+#    server)
+#      echo "Bootstrapping Server machine"
+#      server_config ;;
+#    workstation)
+#      echo "Bootstrapping workstation";;
+#    *) 
+#      echo "Not a configuration type";;
+#   esac
+#}
 
 os_package_update
-machine_type $1
+playbook $1
 sudo rm -rf *raptor_secret*
 #wget https://raw.githubusercontent.com/veeson41/ansible_configs/master/vars/raptor_secret && 
 #ansible-vault decrypt raptor_secret && 

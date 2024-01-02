@@ -6,7 +6,6 @@
       name: sudo
       state: present
 
-
   - name: Add ssh keys
     authorized_key:
       user: veeson
@@ -15,7 +14,6 @@
 
   - name: Install base apt packages
     import_tasks: debian.yml
-    tags: apt-base-pkg
     when: ansible_distribution == "Ubuntu" or ansible_distribution == "Debian"
         
   - name: Install base apt packages
@@ -25,7 +23,6 @@
 
   - name: Install base arch packages
     import_tasks: arch.yml
-    tags: arch-base-pkg
     when: ansible_distribution == "Archlinux"
 
   - name: Create user with sudo privileges
