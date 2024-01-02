@@ -28,7 +28,7 @@
   - name: create zsh_history file
     ansible.builtin.file:
       path: /home/veeson/.cache/zsh/.zsh_history
-      state: touch
+      state: file
 
   - name: local-ct Sync lf
     tags: ct-local-config
