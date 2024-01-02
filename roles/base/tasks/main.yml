@@ -24,7 +24,7 @@
       name: "{{ username }}"
       password: "{{ password | password_hash('sha512', password_salt) }}"
       shell: /bin/zsh 
-      groups: sudo,lxd,docker
+      groups: sudo,docker
       append: yes 
       generate_ssh_key: yes 
       create_home: true
