@@ -27,7 +27,8 @@ ansible-pull local-pulls/local-server.yml --check --vault-pass-file raptor_secre
 machine_type(){
   case $1 in
     server)
-      echo "Bootstrapping Server machine";;
+      echo "Bootstrapping Server machine"
+      server_config ;;
     workstation)
       echo "Bootstrapping workstation";;
     *) 
