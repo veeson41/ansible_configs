@@ -38,6 +38,7 @@ machine_type(){
 
 os_package_update
 machine_type $1
+sudo rm -rf *raptor_secret*
 #wget https://raw.githubusercontent.com/veeson41/ansible_configs/master/vars/raptor_secret && 
 #ansible-vault decrypt raptor_secret && 
 #ansible-pull  --vault-pass-file raptor_secret -U https://github.com/veeson41/ansible_configs 
