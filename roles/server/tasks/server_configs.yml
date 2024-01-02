@@ -4,8 +4,6 @@
     ansible.builtin.file:
       src: /mnt/sync/Sync_Ref/Config_files/Dotfiles/zsh/.zshrc
       dest: /home/veeson/.zshrc
-      owner: veeson
-      group: veeson
       state: link
 
   - name: local-ct Sync zsh
@@ -13,8 +11,6 @@
     ansible.builtin.file:
       src: /mnt/sync/Sync_Ref/Config_files/Dotfiles/zsh
       dest: /home/veeson/.config/zsh
-      owner: veeson
-      group: veeson
       state: link
 
   - name: Create a zsh history
@@ -34,8 +30,6 @@
     ansible.builtin.file:
       src: /mnt/sync/Sync_Ref/Config_files/Dotfiles/zsh/lf
       dest: /home/veeson/.config/lf
-      owner: veeson
-      group: veeson
       state: link
 
 
@@ -44,8 +38,6 @@
     ansible.builtin.file:
       src: /mnt/sync/Sync_Ref/Config_files/Dotfiles/.tmux.conf
       dest: /home/veeson/.tmux.conf
-      owner: veeson
-      group: veeson
       state: link
 
   - name: local-ct Sync nvim
@@ -53,7 +45,5 @@
     ansible.builtin.file:
       src: /mnt/sync/Sync_Ref/Config_files/Dotfiles/nvim
       dest: /home/veeson/.config/nvim
-      owner: veeson
-      group: veeson
       state: link
   
