@@ -3,6 +3,7 @@
 
   - name: Make sure we have '/home/veeson' 
     ansible.builtin.user:
+      name: veeson
       home: /home/veeson
       state: present
 
