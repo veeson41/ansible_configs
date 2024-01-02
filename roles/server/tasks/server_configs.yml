@@ -4,4 +4,34 @@
     ansible.builtin.file:
       src: /mnt/sync/Sync_Ref/Config_files/Dotfiles/zsh/.zshrc
       dest: /home/veeson/.zshrc
+      owner: veeson
+      group: veeson
       state: link
+
+  - name: local-ct Sync lf
+    tags: ct-local-config
+    ansible.builtin.file:
+      src: /mnt/sync/Sync_Ref/Config_files/Dotfiles/zsh/lf
+      dest: /home/veeson/.config/lf
+      owner: veeson
+      group: veeson
+      state: link
+
+  - name: local-ct Sync tmux
+    tags: ct-local-config
+    ansible.builtin.file:
+      src: /mnt/sync/Sync_Ref/Config_files/Dotfiles/.tmux.conf
+      dest: /home/veeson/.tmux.conf
+      owner: veeson
+      group: veeson
+      state: link
+
+  - name: local-ct Sync nvim
+    tags: ct-local-config
+    ansible.builtin.file:
+      src: /mnt/sync/Sync_Ref/Config_files/Dotfiles/nvim
+      dest: /home/veeson/.config/nvim
+      owner: veeson
+      group: veeson
+      state: link
+  
