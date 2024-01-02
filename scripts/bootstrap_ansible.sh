@@ -18,8 +18,20 @@ os_specific_package(){
 	[ "$os" = "Debian" ]  && debian
 }
 
-os_specific_package
-wget https://raw.githubusercontent.com/veeson41/ansible_configs/master/vars/raptor_secret && 
-ansible-vault decrypt raptor_secret && 
-ansible-pull  --vault-pass-file raptor_secret -U https://github.com/veeson41/ansible_configs 
-sudo rm -rf *raptor_secret*
+machine_type(){
+  case $1 in
+    server)
+      echo "serving";;
+    workstation)
+      echo "workstation";;
+    *) 
+      echo "Not a configuration type..";;
+   esac
+}
+
+machine_type $1
+#os_specific_package
+#wget https://raw.githubusercontent.com/veeson41/ansible_configs/master/vars/raptor_secret && 
+#ansible-vault decrypt raptor_secret && 
+#ansible-pull  --vault-pass-file raptor_secret -U https://github.com/veeson41/ansible_configs 
+#sudo rm -rf *raptor_secret*
