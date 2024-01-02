@@ -1,4 +1,10 @@
 ---
+  - name: Create a .config
+    ansible.builtin.file:
+      path: /home/veeson/.config
+      state: directory
+      mode: '0755'
+
   - name: local-ct Sync zshrc
     tags: ct-local-config
     ansible.builtin.file:
