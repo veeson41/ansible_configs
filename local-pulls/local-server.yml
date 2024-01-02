@@ -4,9 +4,9 @@
   connection: local
   become: true
   vars_files:
-    - vars/initial.yml
-    - vars/secret
-    - vars/public_keys/development
+    - ../vars/initial.yml
+    - ../vars/secret
+    - ../vars/public_keys/development
 
   pre_tasks:
   - name: starting
