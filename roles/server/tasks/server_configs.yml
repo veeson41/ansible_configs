@@ -3,5 +3,7 @@
     tags: ct-local-config
     ansible.builtin.file:
       src: /mnt/sync/Sync_Ref/Config_files/Dotfiles/zsh/.zshrc
-      dest: /home/veeson/
+      dest: /home/veeson
+      owner: veeson
+      group: veeson
       state: link
