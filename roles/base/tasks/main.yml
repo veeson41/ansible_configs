@@ -6,7 +6,6 @@
       name: sudo
       state: present
 
-
   - name: Install base apt packages
     import_tasks: debian.yml
     when: ansible_distribution == "Ubuntu" or ansible_distribution == "Debian"
