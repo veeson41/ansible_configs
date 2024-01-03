@@ -4,6 +4,7 @@
   connection: local
   become: true
   become_user: veeson
+  become_method: sudo
   remote_user: veeson
   vars_files:
     - vars/initial.yml
