@@ -10,6 +10,7 @@
     ansible.builtin.file:
       src: /mnt/sync/Sync_Ref/Config_files/Dotfiles/zsh/.zshrc
       dest: /home/veeson/.zshrc
+      group: veeson
       state: link
 
   - name: local-ct Sync zsh
