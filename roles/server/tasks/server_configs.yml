@@ -3,6 +3,8 @@
     ansible.builtin.file:
       path: /home/veeson/.config
       state: directory
+      owner: veeson
+      group: veeson
       mode: '0755'
 
   - name: local-ct Sync zshrc

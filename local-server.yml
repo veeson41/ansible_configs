@@ -3,7 +3,6 @@
   hosts: localhost
   connection: local
   become: true
-  become_method: sudo
   vars_files:
     - vars/initial.yml
     - vars/secret
