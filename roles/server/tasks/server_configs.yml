@@ -20,7 +20,6 @@
     ansible.builtin.file:
       src: /mnt/sync/Sync_Ref/Config_files/Dotfiles/zsh
       dest: /home/veeson/.config/zsh
-      owner: veeson
       group: veeson
       state: link
       follow: true
