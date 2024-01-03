@@ -21,7 +21,7 @@ os_package_update(){
 playbook(){
 wget https://raw.githubusercontent.com/veeson41/ansible_configs/master/vars/raptor_secret && 
 ansible-vault decrypt raptor_secret && 
-ansible-pull $1.yml --vault-pass-file raptor_secret --ask-become-pass --user veeson -U  https://github.com/veeson41/ansible_configs
+ansible-pull $1.yml --vault-pass-file raptor_secret --ask-become-pass -U  https://github.com/veeson41/ansible_configs
 }
 
 #machine_type(){
