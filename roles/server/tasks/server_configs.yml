@@ -15,10 +15,6 @@
       src: /mnt/sync/Sync_Ref/Config_files/Dotfiles/zsh/.zshrc
       dest: /home/veeson/.zshrc
       state: link
-      owner: veeson
-      group: veeson
-      follow: true
-      force: true
 
   - name: local-ct Sync zsh
     tags: ct-local-config
