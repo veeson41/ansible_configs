@@ -8,14 +8,14 @@
   - name: local-ct Sync zshrc
     tags: ct-local-config
     ansible.builtin.file:
-      src: /mnt/sync/Sync_Ref/Config_files/Dotfiles/zsh/.zshrc
+      src: /configs-backups-store/syncthing-files/Sync_Ref/Config_files/Dotfiles/zsh/.zshrc
       dest: /home/veeson/.zshrc
       state: link
 
   - name: local-ct Sync zsh
     tags: ct-local-config
     ansible.builtin.file:
-      src: /mnt/sync/Sync_Ref/Config_files/Dotfiles/zsh
+      src: /configs-backups-store/syncthing-files/Sync_Ref/Config_files/Dotfiles/zsh
       dest: /home/veeson/.config/zsh
       state: link
 
@@ -33,21 +33,21 @@
   - name: local-ct Sync lf
     tags: ct-local-config
     ansible.builtin.file:
-      src: /mnt/sync/Sync_Ref/Config_files/Dotfiles/lf
+      src: /configs-backups-store/syncthing-files/Sync_Ref/Config_files/Dotfiles/lf
       dest: /home/veeson/.config/lf
       state: link
 
   - name: local-ct Sync tmux
     tags: ct-local-config
     ansible.builtin.file:
-      src: /mnt/sync/Sync_Ref/Config_files/Dotfiles/.tmux.conf
+      src: /configs-backups-store/syncthing-files/Sync_Ref/Config_files/Dotfiles/.tmux.conf
       dest: /home/veeson/.tmux.conf
       state: link
 
   - name: local-ct Sync nvim
     tags: ct-local-config
     ansible.builtin.file:
-      src: /mnt/sync/Sync_Ref/Config_files/Dotfiles/nvim
+      src: /configs-backups-store/syncthing-files/Sync_Ref/Config_files/Dotfiles/nvim
       dest: /home/veeson/.config/nvim
       state: link
   
