@@ -17,7 +17,6 @@
     ansible.builtin.file:
       src: /mnt/sync/Sync_Ref/Config_files/Dotfiles/zsh
       dest: /home/veeson/.config/zsh
-      group: veeson
       state: link
 
   - name: Create a zsh history
