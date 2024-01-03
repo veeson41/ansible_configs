@@ -3,6 +3,7 @@
   hosts: localhost
   connection: local
   become: true
+  become_user: veeson
   vars_files:
     - vars/initial.yml
     - vars/secret
