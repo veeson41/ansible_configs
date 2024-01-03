@@ -9,11 +9,14 @@
 
   - name: local-ct Sync zshrc
     tags: ct-local-config
+    become_user: veeson
     ansible.builtin.file:
       src: /mnt/sync/Sync_Ref/Config_files/Dotfiles/zsh/.zshrc
       dest: /home/veeson/.zshrc
+      owner: veeson
       group: veeson
       state: link
+      follow: true
 
   - name: local-ct Sync zsh
     tags: ct-local-config
@@ -22,7 +25,6 @@
       dest: /home/veeson/.config/zsh
       group: veeson
       state: link
-      follow: true
 
   - name: Create a zsh history
     ansible.builtin.file:
