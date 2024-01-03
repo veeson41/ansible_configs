@@ -3,14 +3,10 @@
     ansible.builtin.file:
       path: /home/veeson/.config
       state: directory
-      owner: veeson
-      group: veeson
       mode: '0755'
 
   - name: local-ct Sync zshrc
     tags: ct-local-config
-    become_user: veeson
-    become: true
     ansible.builtin.file:
       src: /mnt/sync/Sync_Ref/Config_files/Dotfiles/zsh/.zshrc
       dest: /home/veeson/.zshrc
@@ -28,15 +24,11 @@
     ansible.builtin.file:
       path: /home/veeson/.cache/zsh
       state: directory
-      owner: veeson
-      group: veeson
       mode: '0755'
 
   - name: create zsh_history file
     ansible.builtin.file:
       path: /home/veeson/.cache/zsh/.zsh_history
-      owner: veeson
-      group: veeson
       state: touch
 
   - name: local-ct Sync lf

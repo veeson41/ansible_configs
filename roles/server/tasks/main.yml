@@ -8,6 +8,8 @@
       state: present
 
   - name: Sync ct local configs
+    become_user: veeson
+    become: true
     tags: ct-local-server
     import_tasks: server_configs.yml
     when: ansible_distribution == "Ubuntu" or ansible_distribution == "Debian"
