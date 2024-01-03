@@ -23,6 +23,7 @@
       owner: veeson
       group: veeson
       state: link
+      follow: true
 
   - name: Create a zsh history
     ansible.builtin.file:
