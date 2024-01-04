@@ -8,6 +8,11 @@
       state: present
     register: veeson_home
     ignore_errors: True
+
+  - name: print veeson_home
+    ansible.builtin.debug:
+      var: veeson_home
+
         
   - block:
     - name: Sync ct local configs
@@ -25,3 +30,6 @@
       import_tasks: vm_server_configs.yml
       when: ansible_virtualization_type == "kvm" 
     when: veeson_home.home  != "/home/veeson"
+
+
+
