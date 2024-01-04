@@ -6,7 +6,7 @@
       name: veeson
       home: /home/veeson
       state: present
-    register: veeson-home
+  register: veeson-home
         
   - block:
     - name: Sync ct local configs
