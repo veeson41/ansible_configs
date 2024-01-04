@@ -5,6 +5,14 @@
       state: directory
       mode: '0755'
 
+  - name: Mount an NFS volume
+    ansible.posix.mount:
+      src: 192.168.1.100:/nfs/ssd/shared_data
+      path: /mnt/shared_data
+      opts: defaults
+      state: mounted
+      fstype: nfs
+
   - name: local-vm Sync zshrc
     tags: vm-local-config
     ansible.builtin.file:
