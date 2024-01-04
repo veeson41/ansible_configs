@@ -5,10 +5,10 @@
       state: directory
       mode: '0755'
 
-  - name: Mount an NFS volume
+  - name: Mount configs-backup-store
     ansible.posix.mount:
-      src: 192.168.1.100:/nfs/ssd/shared_data
-      path: /mnt/shared_data
+      src: 192.168.0.44:/mnt/configs-backups-store
+      path: /mnt/configs-backups-store
       opts: defaults
       state: mounted
       fstype: nfs
