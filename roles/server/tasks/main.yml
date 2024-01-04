@@ -18,12 +18,18 @@
       when: ansible_virtualization_type == "lxc" 
 
 
+    - name: Server nfs setups
+      tags: vm-nfs-local-server
+      import_tasks: server_nfs.yml
+      when: ansible_virtualization_type == "kvm" 
+
     - name: Sync kvm local configs
       become_user: veeson
       become: true
       tags: vm-local-server
       import_tasks: vm_server_configs.yml
       when: ansible_virtualization_type == "kvm" 
+
     when: veeson_home.state  == "present"
 
 
