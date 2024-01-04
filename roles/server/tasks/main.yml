@@ -4,9 +4,9 @@
   - name: Make sure we have '/home/veeson' 
     ansible.builtin.user:
       name: veeson
-      register: veeson-home
       home: /home/veeson
       state: present
+    register: veeson-home
         
   - block:
     - name: Sync ct local configs
