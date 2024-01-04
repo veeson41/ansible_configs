@@ -24,4 +24,4 @@
       tags: vm-local-server
       import_tasks: vm_server_configs.yml
       when: ansible_virtualization_type == "kvm" 
-    when: "{{ veeson-home }}" == "/home/veeson"
+    when: veeson-home  == "/home/veeson"
