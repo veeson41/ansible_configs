@@ -8,7 +8,7 @@
       home: /home/veeson
       state: present
         
-  when: veeson-home == "/home/veeson"
+  - block:
     - name: Sync ct local configs
       become_user: veeson
       become: true
@@ -23,4 +23,4 @@
       tags: vm-local-server
       import_tasks: vm_server_configs.yml
       when: ansible_virtualization_type == "kvm" 
-          
+    when: veeson-home == "/home/veeson"
