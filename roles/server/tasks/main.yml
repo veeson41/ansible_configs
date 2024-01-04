@@ -4,13 +4,23 @@
   - name: Make sure we have '/home/veeson' 
     ansible.builtin.user:
       name: veeson
+      register: veeson-home
       home: /home/veeson
       state: present
-
-  - name: Sync ct local configs
-    become_user: veeson
-    become: true
-    tags: ct-local-server
-    import_tasks: server_configs.yml
-    when: ansible_distribution == "Ubuntu" or ansible_distribution == "Debian"
         
+  when: veeson-home == "/home/veeson"
+    - name: Sync ct local configs
+      become_user: veeson
+      become: true
+      tags: ct-local-server
+      import_tasks: ct_server_configs.yml
+      when: ansible_virtualization_type == "lxc" 
+
+
+    - name: Sync kvm local configs
+      become_user: veeson
+      become: true
+      tags: vm-local-server
+      import_tasks: vm_server_configs.yml
+      when: ansible_virtualization_type == "kvm" 
+          

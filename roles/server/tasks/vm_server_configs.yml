@@ -1,0 +1,53 @@
+---
+  - name: Create a .config
+    ansible.builtin.file:
+      path: /home/veeson/.config
+      state: directory
+      mode: '0755'
+
+  - name: local-vm Sync zshrc
+    tags: vm-local-config
+    ansible.builtin.file:
+      src: /mnt/configs-backups-store/syncthing-files/Sync_Ref/Config_files/Dotfiles/zsh/.zshrc
+      dest: /home/veeson/.zshrc
+      state: link
+
+  - name: local-vm Sync zsh
+    tags: vm-local-config
+    ansible.builtin.file:
+      src: /mnt/configs-backups-store/syncthing-files/Sync_Ref/Config_files/Dotfiles/zsh
+      dest: /home/veeson/.config/zsh
+      state: link
+
+  - name: Create a zsh history
+    ansible.builtin.file:
+      path: /home/veeson/.cache/zsh
+      state: directory
+      mode: '0755'
+
+  - name: create zsh_history file
+    ansible.builtin.file:
+      path: /home/veeson/.cache/zsh/.zsh_history
+      state: touch
+
+  - name: local-vm Sync lf
+    tags: vm-local-config
+    ansible.builtin.file:
+      src: /mnt/configs-backups-store/syncthing-files/Sync_Ref/Config_files/Dotfiles/lf
+      dest: /home/veeson/.config/lf
+      state: link
+
+  - name: local-vm Sync tmux
+    tags: vm-local-config
+    ansible.builtin.file:
+      src: /mnt/configs-backups-store/syncthing-files/Sync_Ref/Config_files/Dotfiles/.tmux.conf
+      dest: /home/veeson/.tmux.conf
+      state: link
+
+  - name: local-vm Sync nvim
+    tags: vm-local-config
+    ansible.builtin.file:
+      src: /mnt/configs-backups-store/syncthing-files/Sync_Ref/Config_files/Dotfiles/nvim
+      dest: /home/veeson/.config/nvim
+      state: link
+  
