@@ -9,11 +9,6 @@
     register: veeson_home
     ignore_errors: True
 
-  - name: print veeson_home
-    ansible.builtin.debug:
-      var: veeson_home
-
-        
   - block:
     - name: Sync ct local configs
       become_user: veeson
