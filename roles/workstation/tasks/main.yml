@@ -1,7 +1,6 @@
 #Workstation main config 
 
   - name: general workstation setup
-    become_user: veeson
     tags: general-station
     import_tasks: workstation_env.yml
 
@@ -12,14 +11,12 @@
     import_tasks: development_env.yml
 
   - name: xorg workstation setup
-    become_user: veeson
     tags: 
       - xorg-station 
       - never
     import_tasks: xorg_workstation_env.yml
 
   - name: wayland workstation setup
-    become_user: veeson
     tags: 
       - wayland-station 
       - never
