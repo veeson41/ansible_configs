@@ -1,7 +1,7 @@
 # debian base packages 
 
   - name: add node-source PPA
-    command: curl -s https://deb.nodesource.com/setup_18.x | sudo bash
+    shell: curl -s https://deb.nodesource.com/setup_18.x | sudo bash
 
   - name: install base apt packages
     apt:
