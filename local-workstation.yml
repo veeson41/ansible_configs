@@ -6,7 +6,7 @@
   vars_files:
     - vars/initial.yml
     - vars/secret
-    - vars/public_keys/development
+    - vars/public_keys/main-server
 
   pre_tasks:
   - name: starting
