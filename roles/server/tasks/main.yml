@@ -1,6 +1,5 @@
 # base play for ssh, user creation and setup for ansible
 
-
   - name: Make sure we have '/home/veeson' 
     ansible.builtin.user:
       name: veeson
@@ -16,7 +15,6 @@
       tags: ct-local-server
       import_tasks: ct_server_configs.yml
       when: ansible_virtualization_type == "lxc" 
-
 
     - name: Server nfs setups
       tags: vm-nfs-local-server

@@ -27,6 +27,13 @@
       dest: /home/veeson/.config/zsh
       state: link
 
+  - name: local-ct Env
+    tags: ct-local-config
+    ansible.builtin.file:
+      src: /mnt/configs-backups-store/syncthing-files/Sync_Ref/Config_files/Dotfiles/env
+      dest: /home/veeson/.config/env
+      state: link
+
   - name: Create a zsh history
     ansible.builtin.file:
       path: /home/veeson/.cache/zsh
