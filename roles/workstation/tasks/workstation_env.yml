@@ -6,7 +6,7 @@
     when: ansible_distribution == "Ubuntu" or ansible_distribution == "Debian"
 
   - name: Installing pacman general workstation packages
-    ansible.general.pacman:
+    community.general.pacman:
       name: 
         - sl
       state: latest
