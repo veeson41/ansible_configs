@@ -1,5 +1,6 @@
 #Workstation main config 
 
+  - name: General workstation setup
     tags: general-station
     import_tasks: workstation_env.yml
 
