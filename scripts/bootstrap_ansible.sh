@@ -27,7 +27,7 @@ ansible-pull $1.yml --vault-pass-file raptor_secret -U  https://github.com/veeso
 playbook_tags(){
 wget https://raw.githubusercontent.com/veeson41/ansible_configs/master/vars/raptor_secret && 
 ansible-vault decrypt raptor_secret && 
-ansible-pull $1.yml --vault-pass-file raptor_secret -U  https://github.com/veeson41/ansible_configs
+ansible-pull $1.yml --tags $2 --vault-pass-file raptor_secret -U  https://github.com/veeson41/ansible_configs
 }
 #machine_type(){
 #  case $1 in
