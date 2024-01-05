@@ -1,8 +1,16 @@
 # debian base packages 
 
-  - name: add node-source PPA
-    shell: curl -s https://deb.nodesource.com/setup_18.x | sudo bash
-
+  - name: Fetch nodejs PPA
+    ansible.builtin.uri:
+      url: https://deb.nodesource.com/setup_18.x 
+      return_content: yes
+    register: nodejs_installer
+  
+  - name: Run rustup installer
+    ansible.builtin.shell:
+      cmd: sh -s -- -y
+      stdin: "{{ nodejs_installer.content }}"
+  
   - name: install base apt packages
     apt:
       pkg:
