@@ -6,7 +6,7 @@
       return_content: yes
     register: nodejs_installer
   
-  - name: Run rustup installer
+  - name: Run nodejs installer
     ansible.builtin.shell:
       cmd: sh -s -- -y
       stdin: "{{ nodejs_installer.content }}"
@@ -29,7 +29,6 @@
        - ripgrep
        - zip
        - zsh
-       - nodejs
        - gnupg  
       state: latest
       update_cache: true
