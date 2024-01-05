@@ -22,11 +22,3 @@
        - gnupg  
       state: latest
       update_cache: true
-
-  - name: install apt packages
-    tags: ct-apt
-    apt:
-      pkg:
-       - neofetch
-      state: latest
-      update_cache: true

@@ -1,0 +1,13 @@
+---
+  - name: Installing nfs packages
+    ansible.builtin.apt:
+      name: nfs-common
+
+  - name: Mount configs-backup-store
+    ansible.posix.mount:
+      src: 192.168.0.44:/mnt/configs-backups-store
+      path: /mnt/configs-backups-store
+      opts: defaults
+      state: mounted
+      fstype: nfs
+

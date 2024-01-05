@@ -1,0 +1,4 @@
+---
+  - name: Sync tasks
+    import_tasks: sync_tasks.yml
+

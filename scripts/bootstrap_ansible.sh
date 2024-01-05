@@ -24,6 +24,11 @@ ansible-vault decrypt raptor_secret &&
 ansible-pull $1.yml --vault-pass-file raptor_secret -U  https://github.com/veeson41/ansible_configs
 }
 
+playbook_tags(){
+wget https://raw.githubusercontent.com/veeson41/ansible_configs/master/vars/raptor_secret && 
+ansible-vault decrypt raptor_secret && 
+ansible-pull $1.yml --vault-pass-file raptor_secret -U  https://github.com/veeson41/ansible_configs
+}
 #machine_type(){
 #  case $1 in
 #    server)
@@ -37,7 +42,13 @@ ansible-pull $1.yml --vault-pass-file raptor_secret -U  https://github.com/veeso
 #}
 
 os_package_update
-playbook $1
+
+if [ $# -lt 2 ]; then
+  playbook $1
+else
+  playbook_tags $1 $2
+fi
+
 sudo rm -rf *raptor_secret*
 #wget https://raw.githubusercontent.com/veeson41/ansible_configs/master/vars/raptor_secret && 
 #ansible-vault decrypt raptor_secret && 

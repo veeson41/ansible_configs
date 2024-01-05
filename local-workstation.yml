@@ -11,7 +11,7 @@
   pre_tasks:
   - name: starting
     debug:
-      msg: Starting workstation configuration
+      msg: Starting workstation configurations
 
   - name: Update ubuntu repository index and packages
     tags: always
@@ -32,3 +32,5 @@
 
   roles:
     - base
+    - server
+    - workstation

@@ -1,0 +1,32 @@
+---
+
+
+  - name: arch sync installs and configurations
+    block:
+      - name: updating arch
+        community.general.pacman:
+          update_cache: true
+          upgrade: true
+
+      - name: Installing arch sync packages
+        community.general.pacman:
+          name:
+            - syncthing
+          state: latest
+    when: ansible_distribution == "Archlinux"
+
+
+  - name: debian sync installs and configurations
+    block:
+      - name: updating apt
+        ansible.builtin.apt:
+          update_cache: true
+          upgrade: dist
+          state: latest
+
+      - name: Installing apt sync packages
+        ansible.builtin.apt:
+          name:
+            - syncthing
+          state: latest
+    when: ansible_distribution == "Ubuntu" or ansible_distribution == "Debian"

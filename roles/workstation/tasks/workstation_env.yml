@@ -1,0 +1,13 @@
+---
+  - name: Installing apt general workstation packages
+    ansible.builtin.apt:
+      name: 
+        - sl
+    when: ansible_distribution == "Ubuntu" or ansible_distribution == "Debian"
+
+  - name: Installing pacman general workstation packages
+    ansible.general.pacman:
+      name: 
+        - sl
+      state: latest
+    when: ansible_distribution == "Archlinux"
