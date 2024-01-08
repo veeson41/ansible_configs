@@ -1,5 +1,5 @@
 ---
   - name: setup dotfiles
-    import_tasks: link/dotfiles.yml
+    import_tasks: links/dotfiles.yml
 
 
