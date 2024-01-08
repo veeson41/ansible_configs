@@ -8,7 +8,7 @@
     tags: 
       - develop-station
       - never
-    import_tasks: development_env.yml
+    import_tasks: development_env.yml, workstation_handler.yml
 
   - name: xorg workstation setup
     tags: 
