@@ -8,6 +8,11 @@
     register: veeson_home
     ignore_errors: True
 
+
+  - name: check ip address
+    debug:
+      var: {{ ansible_facts.ansible_all_ipv4_addresses }}
+
   - block:
     - name: Sync ct local configs
       become_user: veeson
