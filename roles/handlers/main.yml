@@ -1,4 +1,0 @@
-  - name: Restart syncthing
-    service:
-      name: syncthing
-      state: restarted
