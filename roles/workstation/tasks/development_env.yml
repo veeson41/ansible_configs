@@ -1,4 +1,5 @@
 ---
-  - name: Sync tasks
-    import_tasks: sync_tasks.yml
+  - name: setup dotfiles
+    import_tasks: link/dotfiles.yml
+
 

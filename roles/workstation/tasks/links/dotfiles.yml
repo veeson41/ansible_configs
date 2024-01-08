@@ -1,0 +1,45 @@
+---
+
+  - name: ln zshrc
+    tags: ln-workstation-dotfiles
+    ansible.builtin.file:
+      src: /home/veeson/sync-store/Sync_Ref/Config_files/Dotfiles/zsh/.zshrc
+      dest: /home/veeson/.zshrc
+      state: link
+
+  - name: ln zsh
+    tags: ln-workstation-dotfiles
+    ansible.builtin.file:
+      src: /home/veeson/sync-store/Sync_Ref/Config_files/Dotfiles/zsh
+      dest: /home/veeson/.config/zsh
+      state: link
+
+  - name: ln Env
+    tags: ln-workstation-dotfiles
+    ansible.builtin.file:
+      src: /home/veeson/sync-store/Sync_Ref/Config_files/Dotfiles/env
+      dest: /home/veeson/.config/env
+      state: link
+
+
+  - name: ln lf
+    tags: ln-workstation-dotfiles
+    ansible.builtin.file:
+      src: /home/veeson/sync-store/Sync_Ref/Config_files/Dotfiles/lf
+      dest: /home/veeson/.config/lf
+      state: link
+
+  - name: ln tmux
+    tags: ln-workstation-dotfiles
+    ansible.builtin.file:
+      src: /home/veeson/sync-store/Sync_Ref/Config_files/Dotfiles/.tmux.conf
+      dest: /home/veeson/.tmux.conf
+      state: link
+
+  - name: ln nvim
+    tags: ln-workstation-dotfiles
+    ansible.builtin.file:
+      src: /home/veeson/sync-store/Sync_Ref/Config_files/Dotfiles/nvim
+      dest: /home/veeson/.config/nvim
+      state: link
+  

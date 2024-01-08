@@ -32,7 +32,6 @@
 
   roles:
     - base
-    - server
     - workstation
 
   handlers:

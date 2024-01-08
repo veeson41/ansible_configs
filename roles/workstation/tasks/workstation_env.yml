@@ -1,4 +1,24 @@
 ---
+  - name: Create a .config
+    ansible.builtin.file:
+      path: /home/veeson/.config
+      state: directory
+      mode: '0755'
+
+  - name: Create a zsh history
+    ansible.builtin.file:
+      path: /home/veeson/.cache/zsh
+      state: directory
+      mode: '0755'
+
+  - name: create zsh_history file
+    ansible.builtin.file:
+      path: /home/veeson/.cache/zsh/.zsh_history
+      state: touch
+
+  - name: syncthing workstation setup
+    import_tasks: sync_tasks.yml
+
   - name: Installing apt general workstation packages
     ansible.builtin.apt:
       name: 

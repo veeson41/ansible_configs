@@ -1,0 +1,21 @@
+
+  - name: ln Notesbooks
+    tags: ln-workstation-notes
+    ansible.builtin.file:
+      src: /home/veeson/sync-store/Document_and_Notes/Document_Achives/Notebooks
+      dest: /home/veeson/Notebooks
+      state: link
+
+  - name: ln Documents
+    tags: ln-workstation-documents
+    ansible.builtin.file:
+      src: /home/veeson/sync-store/Document_and_Notes/Document_Achives/Documents
+      dest: /home/veeson/Documents
+      state: link
+
+  - name: ln Projects
+    tags: ln-workstation-project
+    ansible.builtin.file:
+      src: /home/veeson/sync-store/Projects_Src/Projects
+      dest: /home/veeson/Projects
+      state: link
