@@ -1,9 +1,4 @@
 ---
-
-vars:
-  service_name: syncthing
-
-
   - name: arch sync installs and configurations
     block:
       - name: updating arch

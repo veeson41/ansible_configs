@@ -33,7 +33,9 @@
   roles:
     - base
     - server
-    - workstation
+    - role: workstation
+      vars:
+        service_name: syncthing
 
       #  handlers:
       #  - import_tasks: roles/handlers/main.yml
