@@ -19,3 +19,10 @@
       src: /home/veeson/sync-store/Projects_Src/Projects
       dest: /home/veeson/Projects
       state: link
+
+  - name: ln Tools
+    tags: ln-workstation-tools
+    ansible.builtin.file:
+      src: /home/veeson/sync-store/Sync_Ref/Code_Achives/Code_Achives/Tools
+      dest: /home/veeson/Tools
+      state: link

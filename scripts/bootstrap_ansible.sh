@@ -29,17 +29,6 @@ wget https://raw.githubusercontent.com/veeson41/ansible_configs/master/vars/rapt
 ansible-vault decrypt raptor_secret && 
 ansible-pull $1.yml --tags $2 --vault-pass-file raptor_secret -U  https://github.com/veeson41/ansible_configs
 }
-#machine_type(){
-#  case $1 in
-#    server)
-#      echo "Bootstrapping Server machine"
-#      server_config ;;
-#    workstation)
-#      echo "Bootstrapping workstation";;
-#    *) 
-#      echo "Not a configuration type";;
-#   esac
-#}
 
 os_package_update
 
@@ -50,7 +39,3 @@ else
 fi
 
 sudo rm -rf *raptor_secret*
-#wget https://raw.githubusercontent.com/veeson41/ansible_configs/master/vars/raptor_secret && 
-#ansible-vault decrypt raptor_secret && 
-#ansible-pull  --vault-pass-file raptor_secret -U https://github.com/veeson41/ansible_configs 
-#sudo rm -rf *raptor_secret*
