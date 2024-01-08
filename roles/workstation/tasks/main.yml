@@ -14,7 +14,7 @@
     tags: 
       - solo-workstation-task
       - never
-    import_tasks: development_env.yml
+    import_tasks: links/projects_docs_scripts.yml
 
   - name: xorg workstation setup
     tags: 
