@@ -60,7 +60,7 @@
         lineinfile:
           path: "/home/veeson/.config/syncthing/config.xml"
           regexp: "127.0.0.1:8384"
-          line: "<address>" ansible_all_ipv4_addresses[0] ":8384</address>"
+          line: "<address>{{ ansible_all_ipv4_addresses[0] }}:8384</address>"
           state: present
         notify: restart syncthing
 
