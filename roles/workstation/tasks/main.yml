@@ -10,6 +10,12 @@
       - never
     import_tasks: development_env.yml
 
+  - name: projects_docs_notes setup
+    tags: 
+      - solo-workstation-task
+      - never
+    import_tasks: development_env.yml
+
   - name: xorg workstation setup
     tags: 
       - xorg-station 
