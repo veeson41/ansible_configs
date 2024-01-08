@@ -29,4 +29,32 @@
           name:
             - syncthing
           state: latest
+
+      - name: Copy syncthing systemd service
+        copy:
+          src: "/usr/lib/systemd/user/syncthing.service"
+          dest: "/etc/systemd/system/syncthing.service"
+          remote_src: true
+          owner: "root"
+          group: "root"
+          mode: "0644"
+    
+      - name: Set syncthing user
+        lineinfile:
+          path: "/etc/systemd/system/syncthing.service"
+          line: "User=veeson"
+          regexp: "^User="
+          insertafter: "^\\[Service\\]$"
+    
+      - name: Reload systemctl
+        systemd:
+          daemon-reload: true
+      
+      - name: Start syncthing
+        service:
+          name: "syncthing"
+          state: "started"
+          enabled: true
     when: ansible_distribution == "Ubuntu" or ansible_distribution == "Debian"
+
+
