@@ -11,7 +11,7 @@
 
   - name: check ip address
     debug:
-      var: ansible_facts
+      var: all_ipv4_addresses
 
   - block:
     - name: Sync ct local configs
