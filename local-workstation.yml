@@ -35,5 +35,5 @@
     - server
     - workstation
 
-      #  handlers:
-      #  - import_tasks: roles/handlers/main.yml
+  handlers:
+  - import_tasks: roles/handlers/main.yml
