@@ -1,0 +1,30 @@
+
+  - name: ln vm Notesbooks
+    tags: ln-vm-notebooks
+    ansible.builtin.file:
+      src: /mnt/configs-backups-store/syncthing-files/Document_and_Notes/Document_Achives/Notebooks
+      dest: /home/veeson/Notebooks
+      state: link
+
+  - name: ln vm  Documents
+    tags: ln-workstation-documents
+    tags: ln-vm-documents
+    ansible.builtin.file:
+      src: /mnt/configs-backups-store/syncthing-files/Document_and_Notes/Document_Achives/Documents
+      dest: /home/veeson/Documents
+      state: link
+
+  - name: ln vm Projects
+    tags: ln-workstation-projects
+    tags: ln-vm-projects
+    ansible.builtin.file:
+      src: /mnt/configs-backups-store/syncthing-files/projects_Src/Projects
+      dest: /home/veeson/Projects
+      state: link
+
+  - name: ln vm Tools
+    tags: ln-vm-tools
+    ansible.builtin.file:
+      src: /mnt/configs-backups-store/syncthing-files/Sync_Ref/Code_Achives/Code_Achives/Tools
+      dest: /home/veeson/Tools
+      state: link
