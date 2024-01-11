@@ -43,7 +43,7 @@
 
   - name: local-vm vm create zsh_history file
     tags: vm-local-config
-    ansible.builtin.file:i
+    ansible.builtin.file:
       path: /home/veeson/.cache/zsh/.zsh_history
       state: touch
 
