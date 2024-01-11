@@ -7,7 +7,6 @@
       state: link
 
   - name: ln vm  Documents
-    tags: ln-workstation-documents
     tags: ln-vm-documents
     ansible.builtin.file:
       src: /mnt/configs-backups-store/syncthing-files/Document_and_Notes/Document_Achives/Documents
@@ -15,7 +14,6 @@
       state: link
 
   - name: ln vm Projects
-    tags: ln-workstation-projects
     tags: ln-vm-projects
     ansible.builtin.file:
       src: /mnt/configs-backups-store/syncthing-files/projects_Src/Projects
