@@ -20,4 +20,5 @@
 # This can be changed to use local user:veeson, thus path in the script will be different
 # The script should be written as ansible tasks, so as to keep idempotent
   - name: Installing and adding lf
+    tags: apt-lf-pkg
     script: ../../../scripts/lf_install.sh
