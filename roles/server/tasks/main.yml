@@ -8,35 +8,33 @@
     register: veeson_home
     ignore_errors: True
 
-  - block:
-    - name: Sync ct local configs
-      become_user: veeson
-      become: true
-      tags: ct-local-server
-      import_tasks: ct_server_configs.yml
-      when: ansible_virtualization_type == "lxc" 
+      #  - block:
+ - name: Sync ct local configs
+   become_user: veeson
+   become: true
+   tags: ct-local-server
+   import_tasks: ct_server_configs.yml
+   when: ansible_virtualization_type == "lxc" 
 
-    - name: Server nfs setups
-      tags: vm-nfs-local-server
-      import_tasks: server_nfs.yml
-      when: ansible_virtualization_type == "kvm" 
+ - name: Server nfs setups
+   tags: vm-nfs-local-server
+   import_tasks: server_nfs.yml
+   when: ansible_virtualization_type == "kvm" 
 
-    - name: Sync kvm local configs
-      become_user: veeson
-      become: true
-      tags: vm-local-server
-      import_tasks: vm_server_configs.yml
-      when: ansible_virtualization_type == "kvm" 
+ - name: Sync kvm local configs
+   become_user: veeson
+   become: true
+   tags: vm-local-server
+   import_tasks: vm_server_configs.yml
+   when: ansible_virtualization_type == "kvm" 
 
-    - name: Sync projects and scripts
-      become_user: veeson
-      become: true
-      tags: 
-        - vm-local-docs
-        - never
-      import_tasks: projects_scripts_vm.yml
+ - name: Sync projects and scripts
+   become_user: veeson
+   become: true
+   tags: 
+     - vm-local-docs
+     - never
+   import_tasks: projects_scripts_vm.yml
 
-    when: veeson_home.state  == "present"
-
-
+     #    when: veeson_home.state  == "present"
 
