@@ -34,6 +34,7 @@
       state: present
 
   - name: Add ssh keys
+    tags: ssh-pubkey
     authorized_key:
       user: veeson
       state: present
