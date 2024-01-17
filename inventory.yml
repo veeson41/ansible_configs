@@ -8,11 +8,15 @@ Local:
     localhost:
 Servers:
   hosts:
-    server1:
-Development:
+    data-server:
+    streaming-server:
+    management-server:
+    document-server:
+    utilities-server:
+Workstations:
   hosts:
-    dev1:
-Home:
+    development-workstation:
+Home-lab:
   children:
     Servers:
     Development: 
