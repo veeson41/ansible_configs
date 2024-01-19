@@ -1,6 +1,4 @@
 ---
-  vars:
-      path: /mnt/syncthing-files/Sync_Ref/Config_files/
 
   - name: Create a .config
     ansible.builtin.file:
