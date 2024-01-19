@@ -11,7 +11,7 @@
       #  - block:
   - name: Sync ct local configs
     vars:
-      path: /mnt/syncthing-files/Sync_Ref/Config_files
+      path: /mnt/syncthing-files/Sync_Ref/Config_files/Dotfiles
     become_user: veeson
     become: true
     tags: ct-local-server
