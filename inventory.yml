@@ -1,8 +1,8 @@
 ---
-all:
-  vars_files:
-    - vars/initial.yml
-    - vars/secret
+#all:
+#  vars_files:
+#    - vars/initial.yml
+#    - vars/secret
 Local:
   hosts:
     localhost:
