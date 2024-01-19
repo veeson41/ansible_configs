@@ -9,7 +9,7 @@
   - name: local-ct Sync zshrc
     tags: ct-local-config
     ansible.builtin.file:
-      src: /mnt/configs-backups-store/syncthing-files/Sync_Ref/Config_files/Dotfiles/zsh/.zshrc
+      src: "{{ path }}"/zsh/.zshrc
       dest: /home/veeson/.zshrc
       state: link
 
