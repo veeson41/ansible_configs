@@ -1,6 +1,6 @@
 ---
 - name: Initial bootstrappin
-  #hosts: localhost
+  hosts: localhost
   connection: local
   become: true
   vars_files:
