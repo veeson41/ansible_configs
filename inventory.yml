@@ -3,9 +3,9 @@
 #  vars_files:
 #    - vars/initial.yml
 #    - vars/secret
-Local:
-  hosts:
-    localhost:
+#Local:
+#  hosts:
+#    localhost:
 Servers:
   hosts:
     data-server:
@@ -19,4 +19,4 @@ Workstations:
 Home-lab:
   children:
     Servers:
-    Development: 
+    workstations: 
