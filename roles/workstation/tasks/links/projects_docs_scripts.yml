@@ -23,6 +23,6 @@
   - name: ln Tools
     tags: ln-workstation-tools
     ansible.builtin.file:
-      src: /home/veeson/sync-store/Sync_Ref/Code_Achives/Code_Achives/Tools
+      src: /home/veeson/sync-store/Sync_Ref/Code_Achives/Tools
       dest: /home/veeson/Tools
       state: link
