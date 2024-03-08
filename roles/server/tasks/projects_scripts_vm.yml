@@ -23,6 +23,6 @@
   - name: ln vm Tools
     tags: ln-vm-tools
     ansible.builtin.file:
-      src: /mnt/configs-backups-store/syncthing-files/Sync_Ref/Code_Achives/Code_Achives/Tools
+      src: /mnt/configs-backups-store/syncthing-files/Sync_Ref/Code_Achives/Tools
       dest: /home/veeson/Tools
       state: link
