@@ -16,7 +16,7 @@
   - name: ln vm Projects
     tags: ln-vm-projects
     ansible.builtin.file:
-      src: /mnt/configs-backups-store/syncthing-files/projects_Src/Projects
+      src: /mnt/configs-backups-store/syncthing-files/Projects_Src/Projects
       dest: /home/veeson/Projects
       state: link
 

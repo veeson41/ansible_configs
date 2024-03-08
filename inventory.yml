@@ -19,4 +19,4 @@ Workstations:
 Home-lab:
   children:
     Servers:
-    workstations: 
+    Workstations: 
