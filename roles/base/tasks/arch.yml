@@ -15,7 +15,7 @@
        - python-setuptools
        - tmux
        - neovim
-       - golang
+       - go
        - fzf
        - ripgrep
        - docker-compose
