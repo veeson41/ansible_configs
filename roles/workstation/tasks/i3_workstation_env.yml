@@ -1,8 +1,4 @@
 ---
-  - name: Installing nfs packages
-    ansible.builtin.apt:
-      name: nfs-common
-
   - name: install arch packages
     community.general.pacman: 
       name:
