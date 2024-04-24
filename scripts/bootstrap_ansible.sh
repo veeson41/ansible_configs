@@ -16,6 +16,7 @@ os_package_update(){
 	os=$(cat /etc/os-release | grep -w ID_LIKE | sed 's/ID_LIKE=//g')
 	# [ "$os" = "Ubuntu" ]  && debian
 	[ "$os" = "Arch" ]  && arch
+	[ "$os" = "arch" ]  && arch
 	[ "$os" = "Debian" ]  && debian
 }
 
