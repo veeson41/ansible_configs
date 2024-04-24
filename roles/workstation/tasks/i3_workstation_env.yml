@@ -1,0 +1,16 @@
+---
+  - name: Installing nfs packages
+    ansible.builtin.apt:
+      name: nfs-common
+
+  - name: install arch packages
+    community.general.pacman: 
+      name:
+        - sxhkd
+        - kitty
+        - brave-browser
+        - unclutter
+        - mpv
+        - picom
+      state: latest
+      update_cache: true

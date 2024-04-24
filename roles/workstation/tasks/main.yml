@@ -22,6 +22,12 @@
       - never
     import_tasks: xorg_workstation_env.yml
 
+  - name: I3 workstation setup
+    tags: 
+      - i3-station 
+      - never
+    import_tasks: i3_workstation_env.yml
+
   - name: wayland workstation setup
     tags: 
       - wayland-station 
