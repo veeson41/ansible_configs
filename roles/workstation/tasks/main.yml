@@ -16,6 +16,12 @@
       - never
     import_tasks: links/projects_docs_scripts.yml
 
+  - name: dotfiles setup
+    tags: 
+      - solo-workstation-dotfile
+      - never
+    import_tasks: links/dotfiles.yml
+
   - name: xorg workstation setup
     tags: 
       - xorg-station 

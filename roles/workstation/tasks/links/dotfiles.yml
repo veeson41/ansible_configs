@@ -21,7 +21,6 @@
       dest: /home/veeson/.config/env
       state: link
 
-
   - name: ln lf
     tags: ln-workstation-dotfiles
     ansible.builtin.file:

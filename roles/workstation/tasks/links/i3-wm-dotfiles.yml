@@ -1,0 +1,30 @@
+---
+
+  - name: ln I3 dotfile
+    tags: ln-workstation-i3-dotfiles
+    ansible.builtin.file:
+      src: /home/veeson/sync-store/Sync_Ref/Config_files/Dotfiles/i3
+      dest: /home/veeson/.config/i3
+      state: link
+
+  - name: ln picom
+    tags: ln-workstation-picom-dotfiles
+    ansible.builtin.file:
+      src: /home/veeson/sync-store/Sync_Ref/Config_files/Dotfiles/picom.conf
+      dest: /home/veeson/.config/picom.conf
+      state: link
+
+  - name: ln rofi
+    tags: ln-workstation-rofi-dotfiles
+    ansible.builtin.file:
+      src: /home/veeson/sync-store/Sync_Ref/Config_files/Dotfiles/rofi
+      dest: /home/veeson/.config/rofi
+      state: link
+
+  - name: ln sxhkd
+    tags: ln-workstation-sxhkd-dotfiles
+    ansible.builtin.file:
+      src: /home/veeson/sync-store/Sync_Ref/Config_files/Dotfiles/sxhkd
+      dest: /home/veeson/.config/sxhkd
+      state: link
+

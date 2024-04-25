@@ -10,3 +10,6 @@
         - picom
       state: latest
       update_cache: true
+
+  - name: setup i3 dotfiles 
+    import_tasks: links/i3-wm-dotfiles.yml
