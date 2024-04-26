@@ -12,6 +12,7 @@
         - python-pywal
         - feh
         - dunst
+        - i3-wm
       state: latest
       update_cache: true
 

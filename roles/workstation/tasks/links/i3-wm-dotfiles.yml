@@ -47,7 +47,7 @@
     block:
       - name: Creating rofi theme
         ansible.builtin.file:
-          path: /home/veeson/.local/share/rofi/themes
+          path: /home/veeson/.local/share/rofi/
           state: directory
           mode: '0755'
 
