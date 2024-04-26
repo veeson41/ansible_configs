@@ -43,17 +43,21 @@
       dest: /home/veeson/.config/sxhkd
       state: link
 
-  - name: Create rofi theme directory
-    ansible.builtin.file:
-      path: /home/veeson/.local/share/rofi/themes
-      state: directory
-      mode: '0755'
+  - name: Creating directories
+    block:
+      - name: Creating rofi theme
+        ansible.builtin.file:
+          path: /home/veeson/.local/share/rofi/themes
+          state: directory
+          mode: '0755'
 
-  - name: Create wallpapers directory
-    ansible.builtin.file:
-      path: /home/veeson/Pictures/Wallpapers
-      state: directory
-      mode: '0755'
+      - name: Create wallpapers directory
+        ansible.builtin.file:
+          path: /home/veeson/Pictures/Wallpapers
+          state: directory
+          mode: '0755'
+    become_user: veeson
+    become: true
 
   - name: ln rofi 
     tags: ln-workstation-rofi-themes
