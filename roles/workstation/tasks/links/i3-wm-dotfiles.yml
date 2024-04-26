@@ -1,30 +1,64 @@
 ---
 
-  - name: ln I3 dotfile
+  - name: ln I3 dotfile conf
     tags: ln-workstation-i3-dotfiles
     ansible.builtin.file:
       src: /home/veeson/sync-store/Sync_Ref/Config_files/Dotfiles/i3
       dest: /home/veeson/.config/i3
       state: link
 
-  - name: ln picom
+  - name: ln picom conf
     tags: ln-workstation-picom-dotfiles
     ansible.builtin.file:
       src: /home/veeson/sync-store/Sync_Ref/Config_files/Dotfiles/picom.conf
       dest: /home/veeson/.config/picom.conf
       state: link
 
-  - name: ln rofi
+  - name: ln rofi conf
     tags: ln-workstation-rofi-dotfiles
     ansible.builtin.file:
       src: /home/veeson/sync-store/Sync_Ref/Config_files/Dotfiles/rofi
       dest: /home/veeson/.config/rofi
       state: link
 
-  - name: ln sxhkd
+  - name: ln kitty conf
+    tags: ln-workstation-kitty-dotfiles
+    ansible.builtin.file:
+      src: /home/veeson/sync-store/Sync_Ref/Config_files/Dotfiles/kitty
+      dest: /home/veeson/.config/kitty
+      state: link
+
+
+  - name: ln alacritty conf
+    tags: ln-workstation-alacritty-dotfiles
+    ansible.builtin.file:
+      src: /home/veeson/sync-store/Sync_Ref/Config_files/Dotfiles/alacritty
+      dest: /home/veeson/.config/alacritty
+      state: link
+
+  - name: ln sxhkd conf
     tags: ln-workstation-sxhkd-dotfiles
     ansible.builtin.file:
       src: /home/veeson/sync-store/Sync_Ref/Config_files/Dotfiles/sxhkd
       dest: /home/veeson/.config/sxhkd
+      state: link
+
+  - name: Create rofi theme directory
+    ansible.builtin.file:
+      path: /home/veeson/.local/share/rofi/themes
+      state: directory
+      mode: '0755'
+
+  - name: Create wallpapers directory
+    ansible.builtin.file:
+      path: /home/veeson/Pictures/Wallpapers
+      state: directory
+      mode: '0755'
+
+  - name: ln rofi 
+    tags: ln-workstation-rofi-themes
+    ansible.builtin.file:
+      src: /home/veeson/sync-store/Sync_Ref/Themes/rofi-themes/themes
+      dest: /home/veeson/.local/share/rofi/themes
       state: link
 

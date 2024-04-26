@@ -28,11 +28,18 @@
       dest: /home/veeson/.config/lf
       state: link
 
-  - name: ln tmux
+  - name: ln .tmux.conf
     tags: ln-workstation-dotfiles
     ansible.builtin.file:
       src: /home/veeson/sync-store/Sync_Ref/Config_files/Dotfiles/.tmux.conf
       dest: /home/veeson/.tmux.conf
+      state: link
+
+  - name: ln tmux
+    tags: ln-workstation-dotfiles
+    ansible.builtin.file:
+      src: /home/veeson/sync-store/Sync_Ref/Config_files/Dotfiles/.tmux
+      dest: /home/veeson/.tmux
       state: link
 
   - name: ln nvim

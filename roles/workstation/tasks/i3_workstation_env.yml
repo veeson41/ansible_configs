@@ -8,6 +8,10 @@
         - unclutter
         - mpv
         - picom
+        - python-pip
+        - python-pywal
+        - feh
+        - dunst
       state: latest
       update_cache: true
 
