@@ -13,6 +13,12 @@
         - feh
         - dunst
         - i3-wm
+        - virt-viewer
+        - sxiv
+        - zathura
+        - zathura-pdf-poppler
+        - zathura-epud
+        - yad
       state: latest
       update_cache: true
 
