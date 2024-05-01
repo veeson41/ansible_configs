@@ -17,6 +17,8 @@
     import_tasks: links/projects_docs_scripts.yml
 
   - name: dotfiles setup
+    vars:
+      path: /home/veeson/sync-store/Sync_Ref/Config_files/Dotfiles
     tags: 
       - solo-workstation-dotfile
       - never

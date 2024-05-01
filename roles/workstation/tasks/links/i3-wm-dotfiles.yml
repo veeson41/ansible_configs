@@ -3,28 +3,28 @@
   - name: ln I3 dotfile conf
     tags: ln-workstation-i3-dotfiles
     ansible.builtin.file:
-      src: /home/veeson/sync-store/Sync_Ref/Config_files/Dotfiles/i3
+      src: "{{ path }}/i3"
       dest: /home/veeson/.config/i3
       state: link
 
   - name: ln picom conf
     tags: ln-workstation-picom-dotfiles
     ansible.builtin.file:
-      src: /home/veeson/sync-store/Sync_Ref/Config_files/Dotfiles/picom.conf
+      src: "{{ path }}/picom.conf"
       dest: /home/veeson/.config/picom.conf
       state: link
 
   - name: ln rofi conf
     tags: ln-workstation-rofi-dotfiles
     ansible.builtin.file:
-      src: /home/veeson/sync-store/Sync_Ref/Config_files/Dotfiles/rofi
+      src: "{{ path }}/rofi"
       dest: /home/veeson/.config/rofi
       state: link
 
   - name: ln kitty conf
     tags: ln-workstation-kitty-dotfiles
     ansible.builtin.file:
-      src: /home/veeson/sync-store/Sync_Ref/Config_files/Dotfiles/kitty
+      src: "{{ path }}/kitty"
       dest: /home/veeson/.config/kitty
       state: link
 
@@ -32,14 +32,14 @@
   - name: ln alacritty conf
     tags: ln-workstation-alacritty-dotfiles
     ansible.builtin.file:
-      src: /home/veeson/sync-store/Sync_Ref/Config_files/Dotfiles/alacritty
+      src: "{{ path }}/alacritty"
       dest: /home/veeson/.config/alacritty
       state: link
 
   - name: ln sxhkd conf
     tags: ln-workstation-sxhkd-dotfiles
     ansible.builtin.file:
-      src: /home/veeson/sync-store/Sync_Ref/Config_files/Dotfiles/sxhkd
+      src: "{{ path }}/sxhkd"
       dest: /home/veeson/.config/sxhkd
       state: link
 

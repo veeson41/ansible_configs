@@ -23,4 +23,6 @@
       update_cache: true
 
   - name: setup i3 dotfiles 
+    vars:
+      path: /home/veeson/sync-store/Sync_Ref/Config_files/Dotfiles
     import_tasks: links/i3-wm-dotfiles.yml
