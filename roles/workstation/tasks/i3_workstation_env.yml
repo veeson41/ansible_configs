@@ -17,7 +17,7 @@
         - sxiv
         - zathura
         - zathura-pdf-poppler
-        - zathura-epud
+        # - zathura-epud
         - yad
       state: latest
       update_cache: true
