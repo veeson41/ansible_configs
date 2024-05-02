@@ -30,13 +30,24 @@
     import_tasks: vm_server_configs.yml
     when: ansible_virtualization_type == "kvm" 
  
-  - name: Sync projects and scripts
+  - name: vm Sync notebooks projects and scripts
     become_user: veeson
     become: true
     tags: 
       - vm-local-docs
       - never
     import_tasks: projects_scripts_vm.yml
+
+
+  - name: ct notebooks Sync projects and scripts
+    become_user: veeson
+    become: true
+    vars:
+      path: /mnt/syncthing-files
+    tags: 
+      - ct-local-docs
+      - never
+    import_tasks: ct_notebooks_projects_scripts.yml
  
       #    when: veeson_home.state  == "present"
  
