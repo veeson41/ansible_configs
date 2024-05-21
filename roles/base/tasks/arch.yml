@@ -24,5 +24,6 @@
        - docker
        - lf 
        - openssh
+       - nodejs
       state: latest
       update_cache: true
