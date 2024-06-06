@@ -3,7 +3,6 @@
     community.general.pacman: 
       name:
         - sxhkd
-        - kitty
         # - brave-browser
         - unclutter
         - mpv
