@@ -13,11 +13,13 @@ sudo apt update && sudo apt upgrade -y && sudo apt install ansible -y
 
 os_package_update(){
 	# os=$(cat /etc/os-release | grep -w NAME | sed 's/NAME="//g' | sed 's/"//g' | cut -d " " -f1)
-	os=$(cat /etc/os-release | grep -w ID_LIKE | sed 's/ID_LIKE=//g')
+	os=$(cat /etc/os-release | grep -w NAME | sed 's/NAME=//g')
 	# [ "$os" = "Ubuntu" ]  && debian
 	[ "$os" = "Arch" ]  && arch
+	[ "$os" = "Arch Linux" ]  && arch
 	[ "$os" = "arch" ]  && arch
 	[ "$os" = "Debian" ]  && debian
+	[ "$os" = "Ubuntu" ]  && debian
 }
 
 playbook(){

@@ -17,6 +17,7 @@
         - sxiv
         - zathura
         - zathura-pdf-poppler
+        - brightnessctl
         # - zathura-epud
         - yad
       state: latest

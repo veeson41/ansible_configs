@@ -1,0 +1,53 @@
+---
+
+  - name: ln rofi conf
+    tags: ln-workstation-rofi-dotfiles
+    ansible.builtin.file:
+      src: "{{ path }}/rofi"
+      dest: /home/veeson/.config/rofi
+      state: link
+
+  - name: ln kitty conf
+    tags: ln-workstation-kitty-dotfiles
+    ansible.builtin.file:
+      src: "{{ path }}/kitty"
+      dest: /home/veeson/.config/kitty
+      state: link
+
+  - name: ln alacritty conf
+    tags: ln-workstation-alacritty-dotfiles
+    ansible.builtin.file:
+      src: "{{ path }}/alacritty"
+      dest: /home/veeson/.config/alacritty
+      state: link
+
+  - name: ln sxhkd conf
+    tags: ln-workstation-sxhkd-dotfiles
+    ansible.builtin.file:
+      src: "{{ path }}/sxhkd"
+      dest: /home/veeson/.config/sxhkd
+      state: link
+
+  - name: Creating directories
+    block:
+      - name: Creating rofi theme
+        ansible.builtin.file:
+          path: /home/veeson/.local/share/rofi/
+          state: directory
+          mode: '0755'
+
+      - name: Create wallpapers directory
+        ansible.builtin.file:
+          path: /home/veeson/Pictures/Wallpapers
+          state: directory
+          mode: '0755'
+    become_user: veeson
+    become: true
+
+  - name: ln rofi 
+    tags: ln-workstation-rofi-themes
+    ansible.builtin.file:
+      src: /home/veeson/sync-store/Sync_Ref/Themes/rofi-themes/themes
+      dest: /home/veeson/.local/share/rofi/themes
+      state: link
+

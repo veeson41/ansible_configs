@@ -1,13 +1,33 @@
 ---
-  - name: Installing nfs packages
-    ansible.builtin.apt:
-      name: nfs-common
+  - name: install arch packages wayland
+    community.general.pacman: 
+      name:
+        - rofi
+        - ttf-firacode-nerd
+        - noto-fonts
+        - noto-fonts-emoji
+        - ttf-linux-libertine
+       #- sxhkd
+        - kitty
+        # - brave-browser
+        - unclutter
+        - mpv
+        - python-pip
+        - python-pywal
+        - feh
+        - dunst
+        - hyprland
+        - virt-viewer
+        - sxiv
+        - zathura
+        - zathura-pdf-poppler
+        - brightnessctl
+        # - zathura-epud
+        - yad
+      state: latest
+      update_cache: true
 
-  - name: Mount configs-backup-store
-    ansible.posix.mount:
-      src: 192.168.0.44:/mnt/configs-backups-store
-      path: /mnt/configs-backups-store
-      opts: defaults
-      state: mounted
-      fstype: nfs
-
+  - name: setup wayland dotfiles 
+    vars:
+      path: /home/veeson/sync-store/Sync_Ref/Config_files/Dotfiles
+    import_tasks: links/hyprland-wm-dotfiles.yml
