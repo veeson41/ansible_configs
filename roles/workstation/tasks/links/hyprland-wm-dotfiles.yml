@@ -1,5 +1,12 @@
 ---
 
+  - name: ln hyprland conf
+    tags: ln-workstation-hyprland-dotfiles
+    ansible.builtin.file:
+      src: "{{ path }}/hyprland"
+      dest: /home/veeson/.config/hyprland
+      state: link
+
   - name: ln rofi conf
     tags: ln-workstation-rofi-dotfiles
     ansible.builtin.file:
