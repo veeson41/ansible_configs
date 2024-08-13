@@ -9,14 +9,12 @@
   - name: Install base apt packages
     tags: apt-base-pkg
     import_tasks: debian.yml
-    when: ansible_os_family == "Debian"
-    # when: ansible_distribution == "Ubuntu" or ansible_distribution == "Debian" or ansible_distribution == "Pop!_OS"
+    when: ansible_distribution == "Ubuntu" or ansible_distribution == "Debian"
         
   - name: Install base apt packages
     import_tasks: repo_utils.yml
     tags: apt-repo-pkg
-    when: ansible_os_family == "Debian"
-    # when: ansible_distribution == "Ubuntu" or ansible_distribution == "Debian" or ansible_distribution == "Pop!_OS"
+    when: ansible_distribution == "Ubuntu" or ansible_distribution == "Debian"
 
   - name: Install base arch packages
     import_tasks: arch.yml
