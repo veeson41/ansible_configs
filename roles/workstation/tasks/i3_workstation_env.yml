@@ -3,6 +3,7 @@
     community.general.pacman: 
       name:
         - sxhkd
+        - rofi
         # - brave-browser
         - unclutter
         - mpv

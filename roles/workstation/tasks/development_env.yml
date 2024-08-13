@@ -1,4 +1,7 @@
 ---
+  - name: lf packages
+    import_tasks: modules/lf-packages.yml
+
   - name: setup dotfiles
     import_tasks: links/dotfiles.yml
 

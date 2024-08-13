@@ -10,7 +10,9 @@
   - name: install arch packages
     community.general.pacman: 
       name:
+       - base-devel
        - curl
+       - cronie
        - python-passlib
        - kitty
        - zsh

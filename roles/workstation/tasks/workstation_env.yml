@@ -35,3 +35,5 @@
         - sl
       state: latest
     when: ansible_distribution == "Archlinux"
+
+  # need to add yay git clone https://aur.archlinux.org/yay.git and makepkg -si ~/yay
