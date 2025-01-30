@@ -63,4 +63,11 @@
         notify: "restart syncthing"
     when: ansible_distribution == "Ubuntu" or ansible_distribution == "Debian"
 
+  - name: Create a sync-store
+    ansible.builtin.file:
+      path: /home/veeson/sync-store
+      state: directory
+      mode: '0755'
 
+    become_user: veeson
+    become: true
