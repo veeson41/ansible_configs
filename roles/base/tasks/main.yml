@@ -10,17 +10,17 @@
     tags: apt-base-pkg
     import_tasks: debian.yml
     when: ansibe_os_family == "Debian"
-    # when: ansible_distribution == "Ubuntu" or ansible_distribution == "Debian"
+    when: ansible_distribution == "Ubuntu" or ansible_distribution == "Debian"
         
   - name: Install base apt packages
     import_tasks: repo_utils.yml
     tags: apt-repo-pkg
     when: ansibe_os_family == "Debian"
-    # when: ansible_distribution == "Ubuntu" or ansible_distribution == "Debian"
+    when: ansible_distribution == "Ubuntu" or ansible_distribution == "Debian"
 
   - name: Install base arch packages
     import_tasks: arch.yml
-    when: ansible_distribution == "Archlinux" or ansible_distribution == "EndeavourOS"
+    when: ansible_distribution == "Archlinux"
 
   - name: Create user with sudo privileges
     user: 
