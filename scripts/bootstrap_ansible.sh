@@ -16,6 +16,7 @@ os_package_update(){
 	os=$(cat /etc/os-release | grep -w NAME | sed 's/NAME=//g')
 	# [ "$os" = "Ubuntu" ]  && debian
 	[ "$os" = "Arch" ]  && arch
+	[ "$os" = "EndeavourOS" ]  && arch
 	[ "$os" = "Arch Linux" ]  && arch
 	[ "$os" = "arch" ]  && arch
 	[ "$os" = "Debian" ]  && debian
