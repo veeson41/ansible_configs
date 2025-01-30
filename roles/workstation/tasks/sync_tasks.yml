@@ -61,8 +61,6 @@
           line: "<address>{{ ansible_all_ipv4_addresses[0] }}:8384</address>"
           state: present
         notify: "restart syncthing"
-
-    when: ansibe_os_family == "Debian"
-    # when: ansible_distribution == "Ubuntu" or ansible_distribution == "Debian"
+    when: ansible_distribution == "Ubuntu" or ansible_distribution == "Debian"
 
 
