@@ -20,7 +20,7 @@
 
   - name: Install base arch packages
     import_tasks: arch.yml
-    when: ansible_distribution == "Archlinux"
+    when: ansible_distribution == "Archlinux" or ansible_distribution == "EndeavourOS"
 
   - name: Create user with sudo privileges
     user: 

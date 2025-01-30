@@ -27,6 +27,7 @@
        - docker-compose
        - docker
        - lf 
+       - ly
        - openssh
        - nodejs
       state: latest

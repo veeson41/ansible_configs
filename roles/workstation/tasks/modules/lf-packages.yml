@@ -1,0 +1,15 @@
+---
+  - name: install arch packages
+    community.general.pacman: 
+      name:
+        - bat
+        - yad
+        - atool
+        - 7zz
+        - iso-info
+        - mediainfo
+        - odt2txt
+        - gpg
+      state: latest
+      update_cache: true
+

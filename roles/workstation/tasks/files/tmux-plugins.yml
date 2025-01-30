@@ -1,0 +1,36 @@
+---
+
+ # - name: Download foo.conf
+  # ansible.builtin.get_url:
+    # url: http://example.com/path/file.conf
+    # dest: /etc/foo.conf
+      # #mode: '0440' 
+      # #
+
+- name: Create wallpapers directory
+  ansible.builtin.file:
+    path: /home/veeson/.tmux/plugins
+    state: directory
+    mode: '0755'
+    become_user: veeson
+    become: true
+
+- name: Clone a repo tmux-resurrect
+  ansible.builtin.git:
+    repo: https://github.com/tmux-plugins/tmux-resurrect
+    dest: .tmux/plugins
+
+- name: Clone a repo tmux-continuum
+  ansible.builtin.git:
+    repo: https://github.com/tmux-plugins/tmux-continuum
+    dest: .tmux/plugins
+
+# - name: Clone a repo tmux-fzf
+  # ansible.builtin.git:
+    # repo: https://github.com/tmux-plugins/tmux-fzf
+    # dest: .tmux/plugins
+
+- name: Clone a repo tpm
+  ansible.builtin.git:
+    repo: https://github.com/tmux-plugins/tmux-resurrect
+    dest: .tmux/plugins
