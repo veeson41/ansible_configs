@@ -7,7 +7,7 @@
       # #mode: '0440' 
       # #
 
-- name: Create wallpapers directory
+- name: create a tmux directory
   ansible.builtin.file:
     path: /home/veeson/.tmux/plugins
     state: directory
@@ -18,19 +18,19 @@
 - name: Clone a repo tmux-resurrect
   ansible.builtin.git:
     repo: https://github.com/tmux-plugins/tmux-resurrect
-    dest: .tmux/plugins
+    dest: /home/veeson/.tmux/plugins
 
 - name: Clone a repo tmux-continuum
   ansible.builtin.git:
     repo: https://github.com/tmux-plugins/tmux-continuum
-    dest: .tmux/plugins
+    dest: /home/veeson/.tmux/plugins
 
-# - name: Clone a repo tmux-fzf
-  # ansible.builtin.git:
-    # repo: https://github.com/tmux-plugins/tmux-fzf
-    # dest: .tmux/plugins
+- name: Clone a repo tmux-fzf
+  ansible.builtin.git:
+    repo: https://github.com/sainnhe/tmux-fzf
+    dest: /home/veeson/.tmux/plugins
 
 - name: Clone a repo tpm
   ansible.builtin.git:
     repo: https://github.com/tmux-plugins/tmux-resurrect
-    dest: .tmux/plugins
+    dest: /home/veeson/.tmux/plugins

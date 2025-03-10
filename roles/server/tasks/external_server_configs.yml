@@ -1,0 +1,75 @@
+---
+
+  - name: Mount configs-backup-store
+    ansible.posix.mount:
+      src: 192.168.0.44:/mnt/configs-backups-store
+      path: /home/veeson/configs-backups-store
+      opts: defaults
+      state: mounted
+      fstype: nfs
+
+  - name: Copy config-back-store
+    copy:
+      src: "/mnt/configs-backups-store"
+      dest: "/home/veeson/"
+      remote_src: true
+      owner: "root"
+      group: "root"
+      mode: "0644"
+
+
+  - name: external-device Sync zshrc
+    tags: vm-local-config
+    ansible.builtin.file:
+      src: /home/veeson/configs-backups-store/syncthing-files/Sync_Ref/Config_files/Dotfiles/zsh/.zshrc
+      dest: /home/veeson/.zshrc
+      state: link
+
+  - name: external-device Sync zsh
+    tags: vm-local-config
+    ansible.builtin.file:
+      src: /home/veeson/configs-backups-store/syncthing-files/Sync_Ref/Config_files/Dotfiles/zsh
+      dest: /home/veeson/.config/zsh
+      state: link
+
+  - name: external-device Env
+    tags: vm-local-config
+    ansible.builtin.file:
+      src: /home/veeson/configs-backups-store/syncthing-files/Sync_Ref/Config_files/Dotfiles/env
+      dest: /home/veeson/.config/env
+      state: link
+
+  - name: external-device Create a zsh history
+    tags: vm-local-config
+    ansible.builtin.file:
+      path: /home/veeson/.cache/zsh
+      state: directory
+      mode: '0755'
+
+  - name: external-device vm create zsh_history file
+    tags: vm-local-config
+    ansible.builtin.file:
+      path: /home/veeson/.cache/zsh/.zsh_history
+      state: touch
+
+  - name: external-device Sync lf
+    tags: vm-local-config
+    ansible.builtin.file:
+      src: /home/veeson/configs-backups-store/syncthing-files/Sync_Ref/Config_files/Dotfiles/lf
+      dest: /home/veeson/.config/lf
+      state: link
+
+  - name: external-device Sync tmux
+    tags: vm-local-config
+    ansible.builtin.file:
+      src: /home/veeson/configs-backups-store/syncthing-files/Sync_Ref/Config_files/Dotfiles/.tmux.conf
+      dest: /home/veeson/.tmux.conf
+      state: link
+
+  - name: external-device Sync nvim
+    tags: vm-local-config
+    ansible.builtin.file:
+      src: /home/veeson/configs-backups-store/syncthing-files/Sync_Ref/Config_files/Dotfiles/nvim
+      dest: /home/veeson/.config/nvim
+      state: link
+  

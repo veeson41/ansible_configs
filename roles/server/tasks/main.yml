@@ -26,9 +26,17 @@
   - name: Sync kvm local configs
     become_user: veeson
     become: true
-    tags: vm-local-server
-    import_tasks: vm_server_configs.yml
+    tags: external-server
+    import_tasks: external_server_configs.yml
     when: ansible_virtualization_type == "kvm" 
+
+
+  # - name: Sync kvm local configs
+    # become_user: veeson
+    # become: true
+    # tags: vm-local-server
+    # import_tasks: vm_server_configs.yml
+    # when: ansible_virtualization_type == "kvm" 
  
   - name: vm Sync notebooks projects and scripts
     become_user: veeson
