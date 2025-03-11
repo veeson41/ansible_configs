@@ -15,8 +15,7 @@
       remote_src: true
       owner: "veeson"
       group: "veeson"
-      # mode: "0644"
-
+      mode: "0644"
 
   - name: external-device Sync zshrc
     tags: vm-local-config
