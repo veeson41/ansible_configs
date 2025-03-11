@@ -9,6 +9,13 @@
       # fstype: nfs
       #
 
+
+  - name: Create a .config
+    ansible.builtin.file:
+      path: /home/veeson/.config
+      state: directory
+      mode: '0755'
+
   - name: Create configs-backups-store
     ansible.builtin.file:
       path: /home/veeson/configs-backups-store
