@@ -7,6 +7,13 @@
       # opts: defaults
       # state: mounted
       # fstype: nfs
+      #
+
+  - name: Create configs-backups-store
+    ansible.builtin.file:
+      path: /home/veeson/configs-backups-store
+      state: directory
+      mode: '0755'
 
   - name: Copy config-back-store
     copy:
@@ -15,7 +22,7 @@
       remote_src: true
       owner: "veeson"
       group: "veeson"
-      mode: "0644"
+      mode: "0755"
 
   - name: external-device Sync zshrc
     tags: vm-local-config
