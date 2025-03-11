@@ -10,12 +10,12 @@
 
   - name: Copy config-back-store
     copy:
-      src: "/mnt/configs-backups-store"
-      dest: "/home/veeson/"
+      src: "/mnt/configs-backups-store/syncthing-files/"
+      dest: "/home/veeson/configs-backups-store/syncthing-files"
       remote_src: true
-      owner: "root"
-      group: "root"
-      mode: "0644"
+      owner: "veeson"
+      group: "veeson"
+      # mode: "0644"
 
 
   - name: external-device Sync zshrc
