@@ -9,7 +9,7 @@
         - mpv
         - picom
         - python-pip
-        - python-pywal
+          #- python-pywal
         - feh
         - dunst
         - i3-wm
